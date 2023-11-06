@@ -2,7 +2,7 @@ package listes;
 
 public class Ville {
     private String nom;
-    private int nbHabitants;
+    private final int nbHabitants;
 
     public Ville(String nom, int nbHabitants) {
         this.nom = nom;

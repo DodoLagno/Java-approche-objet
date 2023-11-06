@@ -44,7 +44,7 @@ public class TestVilles {
 
         // Affichage de la liste résultante
         for (Ville ville : villes) {
-            System.out.println("A '" + ville.getNom() + "', le nombre d'habitants est de " + ville.getNbHabitants() + ".");
+            System.out.println("A " + ville.getNom() + ", le nombre d'habitants est de " + ville.getNbHabitants() + ".");
         }
     }
 }

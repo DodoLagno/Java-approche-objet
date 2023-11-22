@@ -1,13 +1,18 @@
 package listes;
 
+import java.util.Objects;
+
 public class Ville {
     private String nom;
-    private final int nbHabitants;
+    private int nombreHabitants;
 
-    public Ville(String nom, int nbHabitants) {
+    // Constructeur
+    public Ville(String nom, int nombreHabitants) {
         this.nom = nom;
-        this.nbHabitants = nbHabitants;
+        this.nombreHabitants = nombreHabitants;
     }
+
+    // Getters et setters
 
     public String getNom() {
         return nom;
@@ -17,12 +22,46 @@ public class Ville {
         this.nom = nom;
     }
 
-    public int getNbHabitants() {
-        return nbHabitants;
+    public int getNombreHabitants() {
+        return nombreHabitants;
     }
 
+    public void setNombreHabitants(int nombreHabitants) {
+        this.nombreHabitants = nombreHabitants;
+    }
+
+    // Redéfinition de la méthode equals
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;  // Les deux références pointent vers le même objet
+        }
+
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;  // Les classes des objets sont différentes
+        }
+
+        Ville autreVille = (Ville) obj;
+        return nombreHabitants == autreVille.nombreHabitants && Objects.equals(nom, autreVille.nom);
+    }
+
+    // Redéfinition de la méthode hashCode
+    @Override
+    public int hashCode() {
+        return Objects.hash(nom, nombreHabitants);
+    }
+
+    // Méthode pour comparer avec l'opérateur ==
+    public boolean isEqualTo(Ville autreVille) {
+        return this == autreVille;
+    }
+
+    // Redéfinition de la méthode toString pour une représentation textuelle
     @Override
     public String toString() {
-        return "Ville{nom='" + nom + '\'' + ", nbHabitants=" + nbHabitants + '}';
+        return "Ville{" +
+                "nom='" + nom + '\'' +
+                ", nombreHabitants=" + nombreHabitants +
+                '}';
     }
 }

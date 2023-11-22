@@ -19,7 +19,7 @@ public class TestVilles {
         // Recherche de la ville la plus peuplée
         Ville villePlusPeuplee = villes.get(0);
         for (Ville ville : villes) {
-            if (ville.getNbHabitants() > villePlusPeuplee.getNbHabitants()) {
+            if (ville.getNombreHabitants() > villePlusPeuplee.getNombreHabitants()) {
                 villePlusPeuplee = ville;
             }
         }
@@ -29,7 +29,7 @@ public class TestVilles {
         // Suppression de la ville la moins peuplée
         Ville villeMoinsPeuplee = villes.get(0);
         for (Ville ville : villes) {
-            if (ville.getNbHabitants() < villeMoinsPeuplee.getNbHabitants()) {
+            if (ville.getNombreHabitants() < villeMoinsPeuplee.getNombreHabitants()) {
                 villeMoinsPeuplee = ville;
             }
         }
@@ -37,14 +37,14 @@ public class TestVilles {
 
         // Modification des noms des villes de plus de 100 000 habitants en majuscules
         for (Ville ville : villes) {
-            if (ville.getNbHabitants() > 100000) {
+            if (ville.getNombreHabitants() > 100000) {
                 ville.setNom(ville.getNom().toUpperCase());
             }
         }
 
         // Affichage de la liste résultante
         for (Ville ville : villes) {
-            System.out.println("A " + ville.getNom() + ", le nombre d'habitants est de " + ville.getNbHabitants() + ".");
+            System.out.println("A " + ville.getNom() + ", le nombre d'habitants est de " + ville.getNombreHabitants() + ".");
         }
     }
 }
